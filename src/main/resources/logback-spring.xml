@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <!--命中，则静止-->
+            <onMatch>DENY</onMatch>
+            <!--miss，则接受处理-->
+            <onMismatch>ACCEPT</onMismatch>
+
+        </filter>
+        <encoder>
+            <pattern>
+               %d - %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--配置日志文件路径-->
+            <fileNamePattern>
+                c:/springboot/log/tomcat/sell/info.%d.log
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--拦截ERROR以上的级别-->
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--过滤输出日志-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--配置日志文件路径-->
+            <fileNamePattern>
+                c:/springboot/log/tomcat/sell/error.%d.log
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <root lever="info">
+        <appender-ref ref="consoleLog"/>
+        <appender-ref ref="fileInfoLog"/>
+        <appender-ref ref="fileErrorLog"/>
+    </root>
+</configuration>
