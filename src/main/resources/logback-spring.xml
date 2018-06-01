@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
+
+    <!--打印在控制台的日志规则-->
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
@@ -51,6 +53,7 @@
         </rollingPolicy>
     </appender>
 
+    <!--将日志规则包含-->
     <root lever="info">
         <appender-ref ref="consoleLog"/>
         <appender-ref ref="fileInfoLog"/>
