@@ -1,4 +1,4 @@
-package com.tong;
+package com.tong.sell;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
