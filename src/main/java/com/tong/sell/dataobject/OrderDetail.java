@@ -1,5 +1,10 @@
 package com.tong.sell.dataobject;
 
+import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,9 +14,13 @@ import java.util.Date;
  * @date 2018/6/1 11:05
  * 订单详情
  */
+@Entity
+@DynamicUpdate
+@Data
 public class OrderDetail implements Serializable {
 
     /**订单详情id*/
+    @Id
     private String detailId;
     /**订单id*/
     private String orderId;
@@ -30,92 +39,4 @@ public class OrderDetail implements Serializable {
     /**更新时间*/
     private Date updateTime;
 
-
-
-    public String getDetailId() {
-        return detailId;
-    }
-
-    public void setDetailId(String detailId) {
-        this.detailId = detailId;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public Double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(Double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public Integer getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setProductQuantity(Integer productQuantity) {
-        this.productQuantity = productQuantity;
-    }
-
-    public String getProductIcon() {
-        return productIcon;
-    }
-
-    public void setProductIcon(String productIcon) {
-        this.productIcon = productIcon;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDetail{" +
-                "detailId='" + detailId + '\'' +
-                ", orderId='" + orderId + '\'' +
-                ", productId='" + productId + '\'' +
-                ", productName='" + productName + '\'' +
-                ", productPrice=" + productPrice +
-                ", productQuantity=" + productQuantity +
-                ", productIcon='" + productIcon + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
 }
