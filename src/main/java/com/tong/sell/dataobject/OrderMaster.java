@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -30,7 +31,7 @@ public class OrderMaster implements Serializable {
     /**买家微信openid*/
     private String buyerOpenid;
     /**订单总金额*/
-    private Double orderAmount;
+    private BigDecimal orderAmount;
     /**订单状态，0：已下单*/
     private Integer orderStatus;
     /**支付状态，0：未支付*/

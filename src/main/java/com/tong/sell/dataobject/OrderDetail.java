@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -29,7 +30,7 @@ public class OrderDetail implements Serializable {
     /**商品名称*/
     private String productName;
     /**商品价格*/
-    private Double productPrice;
+    private BigDecimal productPrice;
     /**商品数量*/
     private Integer productQuantity;
     /**商品小图*/
