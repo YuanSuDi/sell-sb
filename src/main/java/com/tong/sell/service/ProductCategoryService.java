@@ -5,7 +5,7 @@ import com.tong.sell.dataobject.ProductCategory;
 import java.util.List;
 
 /**
- *   类目
+ *   类目业务层
  * @author 元素滴
  * @date 2018/6/1 15:42
  */

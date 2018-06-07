@@ -14,6 +14,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 import static org.junit.Assert.*;
+
+    /**
+     *   商品信息service层测试
+     * @author 元素滴
+     * @date 2018/6/6 18:10
+     */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProductInfoServiceImplTest {

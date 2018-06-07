@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
- *
+ * 商品信息业务层
  * @author 元素滴
  * @date 2018/6/6 17:39
  */

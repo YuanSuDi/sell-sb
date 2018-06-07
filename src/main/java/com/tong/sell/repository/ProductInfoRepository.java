@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- *
+ * 商品信息持久层
  * @author 元素滴
  * @date 2018/6/6 17:28
  */
