@@ -20,7 +20,7 @@ import java.util.Date;
 @Entity
 @DynamicUpdate //动态更新
 @Data //包含Get，Set和toString
-public class ProductCategory implements Serializable {
+public class ProductCategory{
 
 
     /**类目id*/

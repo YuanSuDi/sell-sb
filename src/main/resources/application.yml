@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  context-path: /sell
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -8,14 +8,3 @@ spring:
     url: jdbc:mysql://192.168.88.190/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
-#logging:
-#  pattern:
-#    # 配置日志输出格式
-#    console: "%d - %msg%n"
-#  # 配置日志文件路径，不能指定名称
-#  # path: c:/springboot/log/tomcat/
-#  # 配置日志文件名称
-#  file: c:/springboot/log/tomcat/sell.log
-#  level:
-#   #root: debug，设置所有类
-#   com.tong: debug #设置指定包名或者类

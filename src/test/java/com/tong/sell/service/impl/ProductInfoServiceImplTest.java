@@ -47,7 +47,11 @@ public class ProductInfoServiceImplTest {
         System.err.println(piList);
     }
 
-    @Test
+    /*@Test
     public void save() {
-    }
+        ProductInfo info = new ProductInfo();
+        info.setProductStock(3);
+        info.setProductIcon("https://");
+        service.save(info);
+    }*/
 }

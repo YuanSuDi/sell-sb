@@ -18,7 +18,7 @@ import java.util.Date;
 @Entity
 @Data
 @DynamicUpdate
-public class ProductInfo implements Serializable {
+public class ProductInfo{
 
     @Id
     /**商品id*/
