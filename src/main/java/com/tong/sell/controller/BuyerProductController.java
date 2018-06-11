@@ -40,7 +40,7 @@ public class BuyerProductController {
         List<ProductInfo> productInfoList = productInfoService.findUpAll();
         //2.查询类目
         List<Integer> categoryTypeList;
-        //传统方式，循环   
+        //传统方式，循环
         /*for (ProductInfo info : productInfoList){
             categoryTypeList.add(info.getCategoryType());
         }*/
@@ -68,6 +68,8 @@ public class BuyerProductController {
             productVO.setProductInfoVOList(productInfoVOList);
             productVOList.add(productVO);
         }
+        //返回自定义的实体
         return ResultVOUtil.success(productVOList);
+
     }
 }
