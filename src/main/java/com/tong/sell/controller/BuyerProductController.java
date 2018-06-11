@@ -68,12 +68,6 @@ public class BuyerProductController {
             productVO.setProductInfoVOList(productInfoVOList);
             productVOList.add(productVO);
         }
-
-        /*ResultVO vo = new ResultVO();
-        vo.setCode(0);
-        vo.setMsg("成功");
-        vo.setData(productVOList);*/
         return ResultVOUtil.success(productVOList);
     }
-
 }
