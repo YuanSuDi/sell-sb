@@ -40,7 +40,7 @@ public class BuyerProductController {
         List<ProductInfo> productInfoList = productInfoService.findUpAll();
         //2.查询类目
         List<Integer> categoryTypeList;
-        //传统方式，循环
+        //传统方式，循环   
         /*for (ProductInfo info : productInfoList){
             categoryTypeList.add(info.getCategoryType());
         }*/
