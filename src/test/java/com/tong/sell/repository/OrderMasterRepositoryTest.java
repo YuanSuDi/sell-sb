@@ -7,6 +7,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
@@ -31,12 +34,12 @@ public class OrderMasterRepositoryTest {
     public void saveTest(){
 
         OrderMaster master = new OrderMaster();
-        master.setBuyerAddress("安徽省合肥市蜀山区");
-        master.setBuyerName("张三");
-        master.setBuyerOpenid("122423423423");
-        master.setBuyerPhone("15685631542");
-        master.setOrderAmount(new BigDecimal(34.23));
-        master.setOrderId("201806111727565421542");
+        master.setBuyerAddress("安徽省合肥市包河区");
+        master.setBuyerName("历史");
+        master.setBuyerOpenid("213458110");
+        master.setBuyerPhone("789456123");
+        master.setOrderAmount(new BigDecimal(4.5));
+        master.setOrderId("201806121054565421231");
         master.setOrderStatus(OrderStatusEnum.NEW.getCode());
         master.setPayStatus(PayStatusEnum.WAIT.getCode());
 
@@ -44,8 +47,14 @@ public class OrderMasterRepositoryTest {
     }
 
 
+
     @Test
     public void findByBuyerOpenid() {
 
+        Pageable pageable = new PageRequest(1,1);
+
+        Page<OrderMaster> result = repository.findByBuyerOpenid("213458110",pageable);
+        System.err.println(result.getTotalElements());
+        System.err.println(result.getContent());
     }
 }
