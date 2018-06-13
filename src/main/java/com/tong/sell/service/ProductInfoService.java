@@ -1,6 +1,7 @@
 package com.tong.sell.service;
 
 import com.tong.sell.dataobject.ProductInfo;
+import com.tong.sell.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -15,6 +16,7 @@ public interface ProductInfoService {
 
     /**
      * 查找单个商品
+     *
      * @param productId
      * @return
      */
@@ -22,12 +24,14 @@ public interface ProductInfoService {
 
     /**
      * 查询上架商品列表
+     *
      * @return
      */
     List<ProductInfo> findUpAll();
 
     /**
      * 查找所有并分页
+     *
      * @param pageable
      * @return
      */
@@ -35,11 +39,17 @@ public interface ProductInfoService {
 
     /**
      * 保存商品
+     *
      * @param productInfo
      * @return
      */
     ProductInfo save(ProductInfo productInfo);
 
+    //加库存
+    void increaseStock(List<CartDTO> cartDTOList);
 
+
+    //减库存
+    void decreaseStock(List<CartDTO> cartDTOList);
 
 }

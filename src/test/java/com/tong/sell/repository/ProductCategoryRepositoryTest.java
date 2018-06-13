@@ -32,8 +32,6 @@ public class ProductCategoryRepositoryTest {
     public void findOneTest(){
         ProductCategory pc  = repository.findOne(1);
         System.out.println(pc);
-        System.out.println("");
-
     }
 
 
@@ -43,7 +41,7 @@ public class ProductCategoryRepositoryTest {
     public void saveTest(){
         ProductCategory pc = new ProductCategory();
         pc.setCategoryName("新增类目3");
-        pc.setCategoryType(3);
+        pc.setCategoryType(4);
         ProductCategory savepc = repository.save(pc);
         System.out.println(savepc);
     }

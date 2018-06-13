@@ -1,29 +1,16 @@
-package com.tong.sell.dataobject;
+package com.tong.sell.dto;
 
+import com.tong.sell.dataobject.OrderDetail;
 import com.tong.sell.enums.OrderStatusEnum;
 import com.tong.sell.enums.PayStatusEnum;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-
-/**
- *  订单主表
- * @author 元素滴
- * @date 2018/6/1 11:11
- */
-@Entity
-@DynamicUpdate
 @Data
-public class OrderMaster{
+public class OrderDTO {
 
     /**订单id. */
-    @Id
     private String orderId;
     /**买家名称. */
     private String buyerName;
@@ -36,15 +23,14 @@ public class OrderMaster{
     /**订单总金额. */
     private BigDecimal orderAmount;
     /**订单状态，0：已下单(默认). */
-    private Integer orderStatus = OrderStatusEnum.NEW.getCode();
+    private Integer orderStatus ;
     /**支付状态，0：未支付. */
-    private Integer payStatus = PayStatusEnum.WAIT.getCode();
+    private Integer payStatus;
     /**创建时间. */
     private Date createTime;
     /**更新时间. */
     private Date updateTime;
     /**订单详情列表*/
-    @Transient //忽略数据库字段查询
+    //@Transient //忽略数据库字段查询
     private List<OrderDetail> orderDetailList;
-
 }

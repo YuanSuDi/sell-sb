@@ -1,13 +1,17 @@
 package com.tong.sell.service.impl;
 
 import com.tong.sell.dataobject.ProductInfo;
+import com.tong.sell.dto.CartDTO;
 import com.tong.sell.enums.ProductStatusEnum;
+import com.tong.sell.enums.ResultEnum;
+import com.tong.sell.exception.SellException;
 import com.tong.sell.repository.ProductInfoRepository;
 import com.tong.sell.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -41,5 +45,29 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfo save(ProductInfo productInfo) {
         return repository.save(productInfo);
+    }
+
+    @Override
+    public void increaseStock(List<CartDTO> cartDTOList) {
+
+    }
+
+    @Override
+    @Transactional
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO:cartDTOList){
+            ProductInfo productInfo = repository.findOne(cartDTO.getProductId());
+            if (productInfo == null){
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            Integer result = productInfo.getProductStock() - cartDTO.getProductQuantity();
+            //库存不足
+            if(result < 0){
+                throw new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
+            }
+            //减去库存
+            productInfo.setProductStock(result);
+            repository.save(productInfo);
+        }
     }
 }

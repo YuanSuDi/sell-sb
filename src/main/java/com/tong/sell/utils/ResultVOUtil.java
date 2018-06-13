@@ -1,4 +1,4 @@
-package com.tong.sell.util;
+package com.tong.sell.utils;
 
 import com.tong.sell.VO.ResultVO;
 

@@ -7,7 +7,7 @@ import com.tong.sell.dataobject.ProductCategory;
 import com.tong.sell.dataobject.ProductInfo;
 import com.tong.sell.service.ProductCategoryService;
 import com.tong.sell.service.ProductInfoService;
-import com.tong.sell.util.ResultVOUtil;
+import com.tong.sell.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,6 +70,8 @@ public class BuyerProductController {
         }
         //返回自定义的实体
         return ResultVOUtil.success(productVOList);
-
     }
+
+
+
 }
