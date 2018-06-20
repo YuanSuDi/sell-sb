@@ -1,8 +1,6 @@
 package com.tong.sell.dto;
 
 import com.tong.sell.dataobject.OrderDetail;
-import com.tong.sell.enums.OrderStatusEnum;
-import com.tong.sell.enums.PayStatusEnum;
 import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
